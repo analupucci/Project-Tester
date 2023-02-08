@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Global Food Recipes</title>
+  </head>
+  <body>
+    <header>
+      <h1>Global Food Recipes</h1>
+      <input type="text" id="searchInput" placeholder="Search for a recipe...">
+      <button id="searchBtn">Search</button>
+      <button id="inspireBtn">Inspire Me</button>
+    </header>
+    <main>
+      <section id="featuredRecipes">
+        <h2>Featured Recipes</h2>
+        <div class="recipe">
+          <img src="" alt="Recipe 1">
+          <h3></h3>
+          <button class="viewRecipeBtn">View Recipe</button>
+        </div>
+        <div class="recipe">
+          <img src="" alt="Recipe 2">
+          <h3></h3>
+          <button class="viewRecipeBtn">View Recipe</button>
+        </div>
+        <div class="recipe">
+          <img src="" alt="Recipe 3">
+          <h3></h3>
+          <button class="viewRecipeBtn">View Recipe</button>
+        </div>
+      </section>
+      <section id="recipeResult">
+        <h2>Recipe Result</h2>
+        <p id="errorMessage" style="display:none">Recipe not found. Please try again.</p>
+        <div id="recipeInfo" style="display:none">
+          <img src="" alt="Recipe Image">
+          <h3 id="recipeTitle"></h3>
+          <p>Ingredients: <span id="ingredients"></span></p>
+          <p>Preparation Time: <span id="preparationTime"></span></p>
+          <p>Number of Portions: <span id="portions"></span></p>
+          <h4>Instructions:</h4>
+          <ol id="instructions"></ol>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

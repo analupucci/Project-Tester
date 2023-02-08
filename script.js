@@ -1,16 +1,16 @@
-const searchInput = document.querySelector('#searchInput');
-const searchBtn = document.querySelector('#searchBtn');
-const inspireBtn = document.querySelector('#inspireBtn');
-const errorMessage = document.querySelector('#errorMessage');
-const recipeInfo = document.querySelector('#recipeInfo');
-const recipeTitle = document.querySelector('#recipeTitle');
-const ingredients = document.querySelector('#ingredients');
-const preparationTime = document.querySelector('#preparationTime');
-const portions = document.querySelector('#portions');
-const instructions = document.querySelector('#instructions');
+let searchInput = document.querySelector('#searchInput');
+let searchBtn = document.querySelector('#searchBtn');
+let inspireBtn = document.querySelector('#inspireBtn');
+let errorMessage = document.querySelector('#errorMessage');
+let recipeInfo = document.querySelector('#recipeInfo');
+let recipeTitle = document.querySelector('#recipeTitle');
+let ingredients = document.querySelector('#ingredients');
+let preparationTime = document.querySelector('#preparationTime');
+let portions = document.querySelector('#portions');
+let instructions = document.querySelector('#instructions');
 
 searchBtn.addEventListener('click', function() {
-  const recipeName = searchInput.value;
+  let recipeName = searchInput.value;
   if (!recipeName) return;
 
   fetch(`https://tasty.p.rapidapi.com/recipes/search?q=${recipeName}`, { method: 'GET', headers: { 'X-RapidAPI-Key': 'cb0c48bdd5mshb62ac4cbba2db1bp1261e1jsn99293502df0c', 'X-RapidAPI-Host': 'tasty.p.rapidapi.com' } })
@@ -20,7 +20,7 @@ searchBtn.addEventListener('click', function() {
         errorMessage.innerHTML = `No results found for "${recipeName}"`;
         return;
       }
-      const recipe = data.results[0];
+      let recipe = data.results[0];
       recipeTitle.innerHTML = recipe.title;
       ingredients.innerHTML = recipe.ingredients;
       preparationTime.innerHTML = recipe.preparation_time;
@@ -45,7 +45,7 @@ inspireBtn.addEventListener('click', function() {
   })
     .then(response => response.json())
     .then(data => {
-      const recipe = data.recipe;
+      let recipe = data.recipe;
       recipeTitle.innerHTML = recipe.title;
       ingredients.innerHTML = recipe.ingredients;
       preparationTime.innerHTML = recipe.preparation_time;
@@ -53,19 +53,20 @@ inspireBtn.addEventListener('click', function() {
       instructions.innerHTML = recipe.instructions;
       recipeInfo.style.display = 'block';
       errorMessage.innerHTML = '';
-    })const searchInput = document.querySelector('#searchInput');
-	const searchBtn = document.querySelector('#searchBtn');
-	const inspireBtn = document.querySelector('#inspireBtn');
-	const errorMessage = document.querySelector('#errorMessage');
-	const recipeInfo = document.querySelector('#recipeInfo');
-	const recipeTitle = document.querySelector('#recipeTitle');
-	const ingredients = document.querySelector('#ingredients');
-	const preparationTime = document.querySelector('#preparationTime');
-	const portions = document.querySelector('#portions');
-	const instructions = document.querySelector('#instructions');
+    })
+	let searchInput = document.querySelector('#searchInput');
+	let searchBtn = document.querySelector('#searchBtn');
+	let inspireBtn = document.querySelector('#inspireBtn');
+	let errorMessage = document.querySelector('#errorMessage');
+	let recipeInfo = document.querySelector('#recipeInfo');
+	let recipeTitle = document.querySelector('#recipeTitle');
+	let ingredients = document.querySelector('#ingredients');
+	let preparationTime = document.querySelector('#preparationTime');
+	let portions = document.querySelector('#portions');
+	let instructions = document.querySelector('#instructions');
 	
 	searchBtn.addEventListener('click', function() {
-	  const recipeName = searchInput.value;
+	  let recipeName = searchInput.value;
 	  if (!recipeName) return;
 	
 	  fetch(`https://tasty.p.rapidapi.com/recipes/search?q=${recipeName}`, { method: 'GET', headers: { 'X-RapidAPI-Key': 'cb0c48bdd5mshb62ac4cbba2db1bp1261e1jsn99293502df0c', 'X-RapidAPI-Host': 'tasty.p.rapidapi.com' } })
@@ -75,7 +76,7 @@ inspireBtn.addEventListener('click', function() {
 			errorMessage.innerHTML = `No results found for "${recipeName}"`;
 			return;
 		  }
-		  const recipe = data.results[0];
+		  let recipe = data.results[0];
 		  recipeTitle.innerHTML = recipe.title;
 		  ingredients.innerHTML = recipe.ingredients;
 		  preparationTime.innerHTML = recipe.preparation_time;
@@ -100,7 +101,7 @@ inspireBtn.addEventListener('click', function() {
 	  })
 		.then(response => response.json())
 		.then(data => {
-		  const recipe = data.recipe;
+		  let recipe = data.recipe;
 		  recipeTitle.innerHTML = recipe.title;
 		  ingredients.innerHTML = recipe.ingredients;
 		  preparationTime.innerHTML = recipe.preparation_time;
@@ -111,5 +112,4 @@ inspireBtn.addEventListener('click', function() {
 		})
 		.catch(error => {
 		  console.error(error);
-		  errorMessage.innerHTML
-	
+		  errorMessage.innerHTML;
